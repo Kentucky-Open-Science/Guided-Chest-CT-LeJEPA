@@ -17,7 +17,8 @@ Modes
   aggregate Stage 3: read per_run/*.json, write seed mean±std + bootstrap CIs to
             aggregate/<model>_<arm>.json + aggregate/all_metadata.json.
 
-See configs/error_bars.yaml and ERROR_BARS_README.md.
+See configs/error_bars.yaml; protocol documentation lives in the
+chest-ct-foundation-model-benchmark repository.
 """
 import os
 import sys

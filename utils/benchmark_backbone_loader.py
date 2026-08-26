@@ -18,7 +18,8 @@ embeddings that drop straight into the error_bars MIL probe pipeline
 Each model is loaded once (frozen, .eval()) and cached for reuse across
 volumes. Native per-model preprocessing is applied INSIDE
 extract_volume_features -- NO DALE-CT body-crop. Only CT-FM natively
-foreground-crops; the others are full-FOV (see BENCHMARK_EMBEDDINGS_README.md).
+foreground-crops; the others are full-FOV (protocol documentation in the
+chest-ct-foundation-model-benchmark repository).
 
 3D volumes arrive as raw-HU (D, H, W) arrays with no affine/spacing sidecar
 (the .npy / WebDataset sources carry no metadata). Per the plan's documented

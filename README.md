@@ -64,11 +64,10 @@ normalization statistics than the CT-RATE-trained variants.**
 | `scripts/exp_c_zposition.py`, `scripts/exp_c_worldmodel_probes.py` | Anatomical world-model probes ($z$-regression, slice ordering, organ identity) |
 | `train_gridsearch.py`, `eval_rad.py` | Linear-probe grid search; RAD-ChestCT transfer |
 | `train_e2e_lora.py` | LoRA fine-tuning |
-| `ERROR_BARS_README.md`, `BENCHMARK_EMBEDDINGS_README.md` | Protocol documentation for the benchmark pipelines |
 
 The evaluation harness above is kept as released with the paper; the
-maintained, self-contained version is the
-[chest-ct-foundation-model-benchmark](https://github.com/Kentucky-Open-Science/chest-ct-foundation-model-benchmark)
+maintained, self-contained version — including the protocol documentation —
+is the [chest-ct-foundation-model-benchmark](https://github.com/Kentucky-Open-Science/chest-ct-foundation-model-benchmark)
 repository.
 
 Dataset preparation (CT-RATE → WebDataset shards, TotalSegmentator masks)
