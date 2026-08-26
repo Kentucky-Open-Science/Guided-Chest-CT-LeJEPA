@@ -36,17 +36,21 @@ preferred-citation:
     - given-names: Mahmut
       name-particle: S.
       family-names: Gokmen
+      orcid: 'https://orcid.org/0009-0000-0891-7567'
     - given-names: Mitchell
       name-particle: A.
       family-names: Klusty
+      orcid: 'https://orcid.org/0009-0005-8953-1004'
     - given-names: Caroline
       name-particle: N.
       family-names: Leach
+      orcid: 'https://orcid.org/0009-0000-9922-9726'
     - given-names: Emily
       name-particle: B.
       family-names: Collier
     - given-names: V. K. Cody
       family-names: Bumgardner
+      orcid: 'https://orcid.org/0000-0001-9588-3501'
   year: 2026
   journal: 'arXiv preprint'
   url: 'https://arxiv.org/abs/2606.07775'
