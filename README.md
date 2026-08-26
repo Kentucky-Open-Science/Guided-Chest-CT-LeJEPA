@@ -1,6 +1,6 @@
 # DALE-CT: Depth-Aware 2D Slice Encoders Learn an Anatomical World Model of Chest CT
 
-Training and evaluation code for **DALE-CT** (Depth-Aware Latent-Euclidean
+Training code and model release for **DALE-CT** (Depth-Aware Latent-Euclidean
 Computed Tomography) — a family of 2D slice-based Vision Transformers trained
 entirely from scratch on chest CT with the heuristics-free
 [LeJEPA](https://arxiv.org/abs/2511.08544) objective and **depth-aware slab
@@ -11,11 +11,15 @@ slab rather than a single slice, so the frozen representations form an
 organs and findings, despite no 3D or positional supervision.
 
 **Paper:** [DALE-CT: Depth-Aware 2D Slice Encoders Learn an Anatomical World Model of Chest CT](https://arxiv.org/abs/2606.07775)
+· **Benchmark:** [chest-ct-foundation-model-benchmark](https://github.com/Kentucky-Open-Science/chest-ct-foundation-model-benchmark) —
+the single-protocol evaluation harness, patient-disjoint splits, and full
+result tables for every model in the paper
 
 ## Released models
 
-All weights are on the Hugging Face Hub (CC-BY-NC-SA-4.0) and load in one line
-via `timm`:
+All weights are on the Hugging Face Hub (CC-BY-NC-SA-4.0); the DALE-CT
+variants load in one line via `timm` (Finetuned DINOv2 is a `transformers`
+model — see its card):
 
 ```python
 import timm
@@ -30,10 +34,17 @@ model = timm.create_model("hf-hub:Kentucky-Open-Science/DALE-CT-0-L", pretrained
 | [DALE-CT-0](https://huggingface.co/Kentucky-Open-Science/DALE-CT-0) | 0.8057 | 0.5946 / 0.7477 | Pure self-supervised, CT-RATE |
 | [Finetuned DINOv2](https://huggingface.co/Kentucky-Open-Science/Finetuned-DINOv2-Chest-CT) | 0.7953 | 0.6252 / 0.7550 | Continual-pretraining baseline |
 
+The earlier [DALE-CT-1S](https://huggingface.co/Kentucky-Open-Science/DALE-CT-1S)
+release (patch-14, `[CLS]`-only anatomical supervision) remains available as
+the backbone used by [Ker-VLJEPA-3B](https://arxiv.org/abs/2603.23308);
+DALE-CT-1S-v2 is the configuration benchmarked in the paper.
+
 All numbers are our own head-to-head measurements: every model in the paper
 (including public 3D baselines COLIPRI-CRM, Merlin, CT-FM, CT-CLIP) is probed
 under one linear-probing MIL protocol on shared splits with bootstrap
-confidence intervals. Each model card documents the exact Hounsfield-Unit
+confidence intervals. The protocol, splits, and result tables are maintained
+in the [chest-ct-foundation-model-benchmark](https://github.com/Kentucky-Open-Science/chest-ct-foundation-model-benchmark)
+repository. Each model card documents the exact Hounsfield-Unit
 preprocessing its backbone expects — **DALE-CT-0-L uses different
 normalization statistics than the CT-RATE-trained variants.**
 
@@ -55,9 +66,13 @@ normalization statistics than the CT-RATE-trained variants.**
 | `train_e2e_lora.py` | LoRA fine-tuning |
 | `ERROR_BARS_README.md`, `BENCHMARK_EMBEDDINGS_README.md` | Protocol documentation for the benchmark pipelines |
 
-Dataset preparation (CT-RATE → WebDataset shards, TotalSegmentator masks) lives
-in the companion repo
-[Process-CT-Data](https://github.com/Kentucky-Open-Science/Process-CT-Data).
+The evaluation harness above is kept as released with the paper; the
+maintained, self-contained version is the
+[chest-ct-foundation-model-benchmark](https://github.com/Kentucky-Open-Science/chest-ct-foundation-model-benchmark)
+repository.
+
+Dataset preparation (CT-RATE → WebDataset shards, TotalSegmentator masks)
+lives in a separate preprocessing pipeline that is not yet public.
 
 Paths in configs refer to our cluster layout; point them at your own data
 roots. Raw datasets and checkpoints are never stored in this repository.
@@ -73,3 +88,8 @@ roots. Raw datasets and checkpoints are never stored in this repository.
   year    = {2026}
 }
 ```
+
+## License
+
+Code is released under [Apache-2.0](LICENSE); model weights on the Hugging
+Face Hub are CC-BY-NC-SA-4.0.

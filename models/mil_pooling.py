@@ -98,7 +98,7 @@ def build_chain_adjacency(mask, k=1, normalize=True):
     positions are zeroed. The KL (masked_kl_divergence) uses the UNNORMALISED
     0/1 form (normalize=False) so that L = D - A is the combinatorial graph
     Laplacian and the Dirichlet energy is the stable sum-of-squared-differences.
-    The ``normalize`` flag (symmetric-normalise to A_norm = D^{-1/2} A D^{-1/2},
+    The ``normalize`` flag (symmetric-normalize to A_norm = D^{-1/2} A D^{-1/2},
     giving I - A_norm = L_sym) is retained for the unit tests and as a helper
     capability; it is not used by the prober.
 

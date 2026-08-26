@@ -1,3 +1,8 @@
+> **Note:** this document describes the pipeline as run for the paper, and
+> references cluster orchestration scripts that are not part of this
+> repository. The maintained, self-contained evaluation harness is the
+> [chest-ct-foundation-model-benchmark](https://github.com/Kentucky-Open-Science/chest-ct-foundation-model-benchmark) repository.
+
 # Benchmark Foundation-Model Embeddings → Error-Bars Pipeline
 
 Feature extraction for the 6 CT foundation-model baselines compared against the

@@ -76,7 +76,7 @@ class MultisourceZarrDataset(Dataset):
         # source selection for the multi-source chest pool:
         #   'all'  -> every train_ssl source (full pool)
         #   list   -> isin(sources)
-        #   str    -> exact single source (legacy single-source behaviour)
+        #   str    -> exact single source (legacy single-source behavior)
         # store_paths are built per-case from each row's own `source` column, so
         # 'all' / a list works across the 21-source pool. withhold_sources are
         # license-blocked and dropped (lola11 DUA, covid_ct no license).
