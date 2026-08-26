@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+title: DALE-CT
+message: >-
+  If you use this code or the DALE-CT models, please cite the paper below.
+type: software
+authors:
+  - given-names: Evan
+    name-particle: W.
+    family-names: Damron
+    affiliation: >-
+      College of Medicine Office of Research, University of Kentucky
+    email: evandamron14@gmail.com
+    orcid: 'https://orcid.org/0009-0009-1104-3202'
+repository-code: 'https://github.com/Kentucky-Open-Science/DALE-CT'
+abstract: >-
+  Training code and model release for DALE-CT, a family of 2D slice-based
+  Vision Transformers trained from scratch on chest CT with the LeJEPA
+  objective and depth-aware slab sampling.
+keywords:
+  - computed tomography
+  - foundation models
+  - self-supervised learning
+  - medical image analysis
+  - representation learning
+license: Apache-2.0
+preferred-citation:
+  type: article
+  title: >-
+    DALE-CT: Depth-Aware 2D Slice Encoders Learn an Anatomical World Model of
+    Chest CT
+  authors:
+    - given-names: Evan
+      name-particle: W.
+      family-names: Damron
+      orcid: 'https://orcid.org/0009-0009-1104-3202'
+    - given-names: Mahmut
+      name-particle: S.
+      family-names: Gokmen
+    - given-names: Mitchell
+      name-particle: A.
+      family-names: Klusty
+    - given-names: Caroline
+      name-particle: N.
+      family-names: Leach
+    - given-names: Emily
+      name-particle: B.
+      family-names: Collier
+    - given-names: V. K. Cody
+      family-names: Bumgardner
+  year: 2026
+  journal: 'arXiv preprint'
+  url: 'https://arxiv.org/abs/2606.07775'
